@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guest Reviews — Aurum Hotels</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hotels.html">Hotels</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+    </ul>
+    <a href="booking.html" class="btn-primary nav-cta">Reserve</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1556742393-d75f468bfcb0?w=1600')">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-eyebrow">Guest Experiences</p>
+      <h1>Reviews & Stories</h1>
+      <p>Real experiences from our valued guests worldwide.</p>
+    </div>
+  </section>
+
+  <!-- RATING OVERVIEW -->
+  <section class="rating-overview">
+    <div class="container">
+      <div class="rating-grid">
+        <div class="rating-big">
+          <div class="big-number">4.9</div>
+          <div class="big-stars">★★★★★</div>
+          <div class="big-label">Overall Rating</div>
+          <div class="big-count">Based on 1,626 reviews</div>
+        </div>
+        <div class="rating-bars">
+          <div class="rating-bar-row">
+            <span>5 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+            <span>82%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>4 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:14%"></div></div>
+            <span>14%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>3 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:3%"></div></div>
+            <span>3%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>2 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:1%"></div></div>
+            <span>1%</span>
+          </div>
+          <div class="rating-bar-row">
+            <span>1 ★</span>
+            <div class="bar-track"><div class="bar-fill" style="width:0.5%"></div></div>
+            <span>0%</span>
+          </div>
+        </div>
+        <div class="category-ratings">
+          <div class="cat-rating"><span>Cleanliness</span><div class="cat-bar"><div style="width:97%"></div></div><span>4.9</span></div>
+          <div class="cat-rating"><span>Service</span><div class="cat-bar"><div style="width:99%"></div></div><span>5.0</span></div>
+          <div class="cat-rating"><span>Location</span><div class="cat-bar"><div style="width:95%"></div></div><span>4.8</span></div>
+          <div class="cat-rating"><span>Value</span><div class="cat-bar"><div style="width:88%"></div></div><span>4.4</span></div>
+          <div class="cat-rating"><span>Comfort</span><div class="cat-bar"><div style="width:97%"></div></div><span>4.9</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITE A REVIEW -->
+  <section class="section write-review-section">
+    <div class="container">
+      <div class="write-review-wrapper">
+        <div class="section-header">
+          <p class="section-eyebrow">Share Your Experience</p>
+          <h2 class="section-title">Write a Review</h2>
+        </div>
+        <form id="reviewForm" class="review-form" onsubmit="submitReview(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Alexandra Laurent" required />
+            </div>
+            <div class="form-group">
+              <label>Hotel Visited</label>
+              <select name="hotel" required>
+                <option value="">— Select Hotel —</option>
+                <option>Maison d'Or — Paris</option>
+                <option>Villa Caldera — Santorini</option>
+                <option>Puri Serenity — Bali</option>
+                <option>Al Nakheel Palace — Dubai</option>
+                <option>The Manhattan Grand — New York</option>
+                <option>Ryokan Kumo — Tokyo</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Date of Stay</label>
+              <input type="month" name="staydate" required />
+            </div>
+            <div class="form-group">
+              <label>Room Type</label>
+              <select name="roomtype">
+                <option>Deluxe Room</option>
+                <option>Junior Suite</option>
+                <option>Grand Suite</option>
+                <option>Presidential Suite</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Overall Rating</label>
+            <div class="star-rating" id="starRating">
+              <span class="star" data-val="1">★</span>
+              <span class="star" data-val="2">★</span>
+              <span class="star" data-val="3">★</span>
+              <span class="star" data-val="4">★</span>
+              <span class="star" data-val="5">★</span>
+            </div>
+            <input type="hidden" name="rating" id="ratingInput" value="0" />
+          </div>
+          <div class="form-group">
+            <label>Review Title</label>
+            <input type="text" name="title" placeholder="Summarize your experience in one line" required />
+          </div>
+          <div class="form-group">
+            <label>Your Review</label>
+            <textarea name="body" rows="5" placeholder="Tell us about your stay — the highlights, the service, what made it special or what could be improved..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Travel Type</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="traveltype" value="couple" checked /> Couple</label>
+              <label class="radio-option"><input type="radio" name="traveltype" value="family" /> Family</label>
+              <label class="radio-option"><input type="radio" name="traveltype" value="solo" /> Solo</label>
+              <label class="radio-option"><input type="radio" name="traveltype" value="business" /> Business</label>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Submit Review ✦</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS LIST -->
+  <section class="section reviews-list-section">
+    <div class="container">
+      <div class="reviews-header">
+        <h2 class="section-title">Guest Reviews</h2>
+        <div class="reviews-filter">
+          <select id="reviewHotelFilter" onchange="filterReviews()">
+            <option value="all">All Hotels</option>
+            <option value="maison-dor">Maison d'Or</option>
+            <option value="villa-caldera">Villa Caldera</option>
+            <option value="puri-serenity">Puri Serenity</option>
+            <option value="al-nakheel">Al Nakheel Palace</option>
+            <option value="manhattan-grand">Manhattan Grand</option>
+            <option value="ryokan-kumo">Ryokan Kumo</option>
+          </select>
+          <select id="reviewRatingFilter" onchange="filterReviews()">
+            <option value="all">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+          </select>
+        </div>
+      </div>
+      <div class="reviews-grid" id="reviewsGrid">
+        <!-- Reviews injected by JS -->
+      </div>
+      <div class="center-action" style="margin-top:2rem">
+        <button class="btn-ghost" id="loadMoreBtn" onclick="loadMoreReviews()">Load More Reviews</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="reviewModal">
+    <div class="modal">
+      <div class="modal-icon">★</div>
+      <h2>Review Submitted!</h2>
+      <p>Thank you for sharing your experience. Your review will appear after a brief moderation check.</p>
+      <button class="btn-primary" onclick="closeModal('reviewModal')">Continue</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><div class="footer-logo">AURUM</div><p>Curating extraordinary hospitality experiences since 1924.</p></div>
+        <div class="footer-col"><h4>Destinations</h4><ul><li><a href="#">Europe</a></li><li><a href="#">Asia</a></li><li><a href="#">Americas</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Careers</a></li></ul></div>
+        <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help</a></li><li><a href="#">Privacy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Aurum Hotels. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/reviews.js"></script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Stay — Aurum Hotels</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hotels.html">Hotels</a></li>
+      <li><a href="booking.html" class="active">Book Now</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <a href="booking.html" class="btn-primary nav-cta">Reserve</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1600')">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-eyebrow">Reservations</p>
+      <h1>Book Your Stay</h1>
+      <p>Your extraordinary experience begins here.</p>
+    </div>
+  </section>
+
+  <section class="section booking-section">
+    <div class="container">
+      <div class="booking-layout">
+
+        <!-- BOOKING FORM -->
+        <div class="booking-form-wrapper">
+          <h2 class="booking-title">Reservation Details</h2>
+
+          <form id="bookingForm" class="booking-form" onsubmit="handleBooking(event)">
+
+            <!-- Step 1 -->
+            <div class="form-step active" id="step1">
+              <h3 class="step-title"><span class="step-num">1</span> Choose Your Hotel & Room</h3>
+
+              <div class="form-group">
+                <label>Select Hotel</label>
+                <select name="hotel" id="hotelSelect" required onchange="updateRooms()">
+                  <option value="">— Choose a hotel —</option>
+                  <option value="maison-dor">Maison d'Or — Paris, France</option>
+                  <option value="villa-caldera">Villa Caldera — Santorini, Greece</option>
+                  <option value="puri-serenity">Puri Serenity — Bali, Indonesia</option>
+                  <option value="al-nakheel">Al Nakheel Palace — Dubai, UAE</option>
+                  <option value="manhattan-grand">The Manhattan Grand — New York, USA</option>
+                  <option value="ryokan-kumo">Ryokan Kumo — Tokyo, Japan</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Room Type</label>
+                <div class="room-options" id="roomOptions">
+                  <label class="room-option">
+                    <input type="radio" name="room" value="deluxe" required />
+                    <div class="room-card">
+                      <div class="room-name">Deluxe Room</div>
+                      <div class="room-size">35 m² · City View</div>
+                      <div class="room-price">From $560/night</div>
+                    </div>
+                  </label>
+                  <label class="room-option">
+                    <input type="radio" name="room" value="junior-suite" />
+                    <div class="room-card">
+                      <div class="room-name">Junior Suite</div>
+                      <div class="room-size">55 m² · Garden View</div>
+                      <div class="room-price">From $890/night</div>
+                    </div>
+                  </label>
+                  <label class="room-option">
+                    <input type="radio" name="room" value="grand-suite" />
+                    <div class="room-card">
+                      <div class="room-name">Grand Suite</div>
+                      <div class="room-size">90 m² · Sea View</div>
+                      <div class="room-price">From $1,240/night</div>
+                    </div>
+                  </label>
+                  <label class="room-option">
+                    <input type="radio" name="room" value="presidential" />
+                    <div class="room-card">
+                      <div class="room-name">Presidential Suite</div>
+                      <div class="room-size">180 m² · Panoramic</div>
+                      <div class="room-price">From $2,100/night</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Check-in Date</label>
+                  <input type="date" name="checkin" id="checkin" required onchange="calculateTotal()" />
+                </div>
+                <div class="form-group">
+                  <label>Check-out Date</label>
+                  <input type="date" name="checkout" id="checkout" required onchange="calculateTotal()" />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Adults</label>
+                  <select name="adults" onchange="calculateTotal()">
+                    <option>1</option><option selected>2</option><option>3</option><option>4</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Children</label>
+                  <select name="children">
+                    <option selected>0</option><option>1</option><option>2</option><option>3</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="button" class="btn-primary btn-full" onclick="goToStep(2)">Continue to Guest Details →</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="form-step" id="step2">
+              <h3 class="step-title"><span class="step-num">2</span> Guest Information</h3>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" name="firstname" placeholder="Alexandra" required />
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" name="lastname" placeholder="Laurent" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="alexandra@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" name="phone" placeholder="+1 (555) 000-0000" />
+              </div>
+
+              <div class="form-group">
+                <label>Nationality</label>
+                <select name="nationality">
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>France</option>
+                  <option>Germany</option>
+                  <option>Japan</option>
+                  <option>Australia</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Special Requests <span class="optional">(optional)</span></label>
+                <textarea name="requests" rows="3" placeholder="e.g. Late check-in, dietary requirements, anniversary setup..."></textarea>
+              </div>
+
+              <div class="form-row">
+                <button type="button" class="btn-ghost" onclick="goToStep(1)">← Back</button>
+                <button type="button" class="btn-primary" onclick="goToStep(3)">Continue to Payment →</button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="form-step" id="step3">
+              <h3 class="step-title"><span class="step-num">3</span> Payment Details</h3>
+
+              <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" name="cardnum" placeholder="4242 4242 4242 4242" maxlength="19" oninput="formatCard(this)" required />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiry Date</label>
+                  <input type="text" name="expiry" placeholder="MM / YY" maxlength="7" oninput="formatExpiry(this)" required />
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" name="cvv" placeholder="•••" maxlength="4" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Name on Card</label>
+                <input type="text" name="cardname" placeholder="ALEXANDRA LAURENT" required />
+              </div>
+
+              <div class="secure-notice">
+                🔒 Your payment is 256-bit SSL encrypted and fully secure.
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" required />
+                  I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Cancellation Policy</a>
+                </label>
+              </div>
+
+              <div class="form-row">
+                <button type="button" class="btn-ghost" onclick="goToStep(2)">← Back</button>
+                <button type="submit" class="btn-primary">Confirm Reservation ✦</button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Step Progress -->
+          <div class="step-progress">
+            <div class="progress-step active" id="prog1">1</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" id="prog2">2</div>
+            <div class="progress-line"></div>
+            <div class="progress-step" id="prog3">3</div>
+          </div>
+        </div>
+
+        <!-- BOOKING SUMMARY -->
+        <div class="booking-summary">
+          <div class="summary-card sticky">
+            <h3>Booking Summary</h3>
+            <div class="summary-hotel" id="summaryHotel">
+              <div class="summary-img" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400')"></div>
+              <div class="summary-info">
+                <div class="summary-name" id="summaryName">Select a hotel</div>
+                <div class="summary-location" id="summaryLocation">—</div>
+              </div>
+            </div>
+            <div class="summary-details">
+              <div class="summary-row"><span>Room Type</span><span id="summaryRoom">—</span></div>
+              <div class="summary-row"><span>Check-in</span><span id="summaryCheckin">—</span></div>
+              <div class="summary-row"><span>Check-out</span><span id="summaryCheckout">—</span></div>
+              <div class="summary-row"><span>Nights</span><span id="summaryNights">—</span></div>
+              <div class="summary-row"><span>Guests</span><span id="summaryGuests">2 Adults</span></div>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-row subtotal"><span>Room Rate</span><span id="summaryRate">—</span></div>
+            <div class="summary-row subtotal"><span>Taxes & Fees (12%)</span><span id="summaryTax">—</span></div>
+            <div class="summary-row total"><span>Total</span><span id="summaryTotal">—</span></div>
+            <div class="summary-note">🎉 Free cancellation until 48h before check-in</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal">
+      <div class="modal-icon">✦</div>
+      <h2>Reservation Confirmed!</h2>
+      <p>Your booking has been confirmed. A detailed confirmation has been sent to your email address.</p>
+      <p class="booking-ref">Booking Reference: <strong id="bookingRef">AUR-2026-XXXX</strong></p>
+      <a href="index.html" class="btn-primary">Return to Home</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom"><p>© 2026 Aurum Hotels. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurum Hotels — Luxury Redefined</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="hotels.html">Hotels</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <a href="booking.html" class="btn-primary nav-cta">Reserve</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="hero-overlay"></div>
+      <div class="hero-particles" id="particles"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. 1924 · A World Apart</p>
+      <h1 class="hero-title">Where Luxury<br/><em>Meets Legend</em></h1>
+      <p class="hero-sub">Curated sanctuaries across the world's most extraordinary destinations. Experience the art of true hospitality.</p>
+      <div class="hero-actions">
+        <a href="booking.html" class="btn-primary">Book Your Stay</a>
+        <a href="hotels.html" class="btn-ghost">Explore Hotels</a>
+      </div>
+    </div>
+    <!-- Search Bar -->
+    <div class="hero-search">
+      <form class="search-form" action="booking.html">
+        <div class="search-field">
+          <label>Destination</label>
+          <select name="destination">
+            <option value="">Select City</option>
+            <option>Paris, France</option>
+            <option>Santorini, Greece</option>
+            <option>Bali, Indonesia</option>
+            <option>New York, USA</option>
+            <option>Tokyo, Japan</option>
+            <option>Dubai, UAE</option>
+          </select>
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Check-in</label>
+          <input type="date" name="checkin" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Check-out</label>
+          <input type="date" name="checkout" />
+        </div>
+        <div class="search-divider"></div>
+        <div class="search-field">
+          <label>Guests</label>
+          <select name="guests">
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4+ Guests</option>
+          </select>
+        </div>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-bar">
+    <div class="stat"><span class="stat-num">47</span><span class="stat-label">Luxury Hotels</span></div>
+    <div class="stat"><span class="stat-num">28</span><span class="stat-label">Countries</span></div>
+    <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Average Rating</span></div>
+    <div class="stat"><span class="stat-num">180K+</span><span class="stat-label">Happy Guests</span></div>
+  </section>
+
+  <!-- FEATURED HOTELS -->
+  <section class="section featured">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Collection</p>
+        <h2 class="section-title">Featured Properties</h2>
+        <p class="section-desc">Handpicked masterpieces of architecture and service, each telling a unique story.</p>
+      </div>
+      <div class="hotels-grid">
+        <div class="hotel-card" data-aos="fade-up">
+          <div class="hotel-img" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800')">
+            <div class="hotel-badge">Most Popular</div>
+          </div>
+          <div class="hotel-info">
+            <div class="hotel-location">📍 Santorini, Greece</div>
+            <h3 class="hotel-name">Villa Caldera</h3>
+            <p class="hotel-desc">Perched above the caldera with infinite Aegean views and private infinity pools.</p>
+            <div class="hotel-footer">
+              <div class="hotel-stars">★★★★★ <span>(284 reviews)</span></div>
+              <div class="hotel-price">From <strong>$890</strong>/night</div>
+            </div>
+            <a href="booking.html?hotel=villa-caldera" class="btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+        <div class="hotel-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="hotel-img" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800')">
+            <div class="hotel-badge new">New</div>
+          </div>
+          <div class="hotel-info">
+            <div class="hotel-location">📍 Paris, France</div>
+            <h3 class="hotel-name">Maison d'Or</h3>
+            <p class="hotel-desc">A Haussmann-era palace reimagined as the ultimate Parisian art de vivre experience.</p>
+            <div class="hotel-footer">
+              <div class="hotel-stars">★★★★★ <span>(197 reviews)</span></div>
+              <div class="hotel-price">From <strong>$1,240</strong>/night</div>
+            </div>
+            <a href="booking.html?hotel=maison-dor" class="btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+        <div class="hotel-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="hotel-img" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800')">
+          </div>
+          <div class="hotel-info">
+            <div class="hotel-location">📍 Bali, Indonesia</div>
+            <h3 class="hotel-name">Puri Serenity</h3>
+            <p class="hotel-desc">A jungle hideaway where traditional Balinese craftsmanship meets modern luxury.</p>
+            <div class="hotel-footer">
+              <div class="hotel-stars">★★★★☆ <span>(341 reviews)</span></div>
+              <div class="hotel-price">From <strong>$560</strong>/night</div>
+            </div>
+            <a href="booking.html?hotel=puri-serenity" class="btn-primary btn-sm">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="center-action">
+        <a href="hotels.html" class="btn-ghost">View All Properties →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section why-us">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <p class="section-eyebrow">The Aurum Difference</p>
+          <h2 class="section-title">Crafted for the<br/><em>Discerning Traveller</em></h2>
+          <p>Every Aurum property is personally vetted by our team of luxury travel connoisseurs. We don't just book rooms — we orchestrate experiences that become lifelong memories.</p>
+          <ul class="why-list">
+            <li><span class="why-icon">✦</span> Exclusive member rates up to 35% off</li>
+            <li><span class="why-icon">✦</span> 24/7 dedicated concierge service</li>
+            <li><span class="why-icon">✦</span> Complimentary room upgrades when available</li>
+            <li><span class="why-icon">✦</span> Free cancellation on most bookings</li>
+            <li><span class="why-icon">✦</span> Best price guarantee, always</li>
+          </ul>
+          <a href="hotels.html" class="btn-primary">Discover More</a>
+        </div>
+        <div class="why-image">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=700" alt="Luxury hotel pool" loading="lazy" />
+          <div class="why-badge">
+            <span class="badge-num">4.9</span>
+            <span class="badge-text">Average Guest Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Guest Voices</p>
+        <h2 class="section-title">Stories from Our Guests</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">The most extraordinary stay of my life. Villa Caldera exceeded every expectation — the staff remembered my coffee order on day two. True luxury is in the details.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#c9a96e">S</div>
+            <div>
+              <div class="author-name">Sophia Marceau</div>
+              <div class="author-role">Villa Caldera, Santorini</div>
+            </div>
+            <div class="author-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card featured-testimonial">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">Maison d'Or is Paris distilled into a single address. I've stayed in hundreds of hotels worldwide — none compare to the effortless elegance of this place.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#8b6914">J</div>
+            <div>
+              <div class="author-name">James Whitfield</div>
+              <div class="author-role">Maison d'Or, Paris</div>
+            </div>
+            <div class="author-stars">★★★★★</div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote-icon">"</div>
+          <p class="testimonial-text">Puri Serenity gave me what no other hotel could: genuine stillness. The jungle setting, the sound of water, the warmth of the people — I'm already planning my return.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background:#5a7a3a">A</div>
+            <div>
+              <div class="author-name">Amara Osei</div>
+              <div class="author-role">Puri Serenity, Bali</div>
+            </div>
+            <div class="author-stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="center-action">
+        <a href="reviews.html" class="btn-ghost">Read All Reviews →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <h2>Unlock Exclusive Member Rates</h2>
+          <p>Join 50,000+ travellers receiving private offers, early access, and luxury travel inspiration.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Your email address" required />
+          <button type="submit" class="btn-primary">Join Now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">AURUM</div>
+          <p>Curating extraordinary hospitality experiences since 1924. Every stay, a masterpiece.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter">TW</a>
+            <a href="#" aria-label="Facebook">FB</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul>
+            <li><a href="hotels.html">Europe</a></li>
+            <li><a href="hotels.html">Asia Pacific</a></li>
+            <li><a href="hotels.html">Middle East</a></li>
+            <li><a href="hotels.html">Americas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Aurum</a></li>
+            <li><a href="#">Press & Media</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Cookie Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Aurum Hotels. All rights reserved.</p>
+        <p>Crafted with passion for extraordinary travel.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

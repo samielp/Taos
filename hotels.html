@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Hotels — Aurum Hotels</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav" id="navbar">
+    <a href="index.html" class="nav-logo">AURUM</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hotels.html" class="active">Hotels</a></li>
+      <li><a href="booking.html">Book Now</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+    </ul>
+    <a href="booking.html" class="btn-primary nav-cta">Reserve</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600')">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="section-eyebrow">Our Collection</p>
+      <h1>Discover Our Hotels</h1>
+      <p>47 extraordinary properties across 28 countries.</p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters-bar">
+    <div class="container">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All Properties</button>
+        <button class="filter-btn" data-filter="europe">Europe</button>
+        <button class="filter-btn" data-filter="asia">Asia Pacific</button>
+        <button class="filter-btn" data-filter="middleeast">Middle East</button>
+        <button class="filter-btn" data-filter="americas">Americas</button>
+      </div>
+      <div class="sort-select">
+        <select id="sortSelect">
+          <option value="popular">Most Popular</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOTELS LIST -->
+  <section class="section">
+    <div class="container">
+      <div class="hotels-grid-full" id="hotelsGrid">
+
+        <div class="hotel-card-full" data-region="europe" data-price="1240" data-rating="5">
+          <div class="hotel-img-full" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800')">
+            <div class="hotel-badge">Top Rated</div>
+          </div>
+          <div class="hotel-info-full">
+            <div class="hotel-location">📍 Paris, France</div>
+            <h3>Maison d'Or</h3>
+            <p>A Haussmann-era palace reimagined as the ultimate Parisian art de vivre. Michelin-starred dining, a world-class spa, and views of the Eiffel Tower from your suite.</p>
+            <div class="amenities">
+              <span>🏊 Pool</span><span>🧖 Spa</span><span>🍽️ Restaurant</span><span>🏋️ Gym</span><span>🅿️ Parking</span>
+            </div>
+            <div class="hotel-footer-full">
+              <div>
+                <div class="hotel-stars">★★★★★ <span>4.9 (197 reviews)</span></div>
+                <div class="hotel-price">From <strong>$1,240</strong>/night</div>
+              </div>
+              <div class="card-actions">
+                <a href="booking.html?hotel=maison-dor" class="btn-primary">Book Now</a>
+                <a href="reviews.html?hotel=maison-dor" class="btn-ghost btn-sm">Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-card-full" data-region="europe" data-price="890" data-rating="5">
+          <div class="hotel-img-full" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800')">
+            <div class="hotel-badge">Most Popular</div>
+          </div>
+          <div class="hotel-info-full">
+            <div class="hotel-location">📍 Santorini, Greece</div>
+            <h3>Villa Caldera</h3>
+            <p>Perched above the iconic caldera with breathtaking Aegean views. Private infinity pools, cave suites, and unforgettable sunsets from every terrace.</p>
+            <div class="amenities">
+              <span>🏊 Pool</span><span>🧖 Spa</span><span>🍽️ Restaurant</span><span>🚢 Boat Tours</span>
+            </div>
+            <div class="hotel-footer-full">
+              <div>
+                <div class="hotel-stars">★★★★★ <span>4.9 (284 reviews)</span></div>
+                <div class="hotel-price">From <strong>$890</strong>/night</div>
+              </div>
+              <div class="card-actions">
+                <a href="booking.html?hotel=villa-caldera" class="btn-primary">Book Now</a>
+                <a href="reviews.html?hotel=villa-caldera" class="btn-ghost btn-sm">Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-card-full" data-region="asia" data-price="560" data-rating="4">
+          <div class="hotel-img-full" style="background-image:url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800')">
+          </div>
+          <div class="hotel-info-full">
+            <div class="hotel-location">📍 Bali, Indonesia</div>
+            <h3>Puri Serenity</h3>
+            <p>A jungle hideaway where traditional Balinese craftsmanship meets modern luxury. Surrounded by terraced rice paddies and the sounds of tropical wildlife.</p>
+            <div class="amenities">
+              <span>🏊 Pool</span><span>🧖 Spa</span><span>🍽️ Restaurant</span><span>🌿 Wellness</span>
+            </div>
+            <div class="hotel-footer-full">
+              <div>
+                <div class="hotel-stars">★★★★☆ <span>4.7 (341 reviews)</span></div>
+                <div class="hotel-price">From <strong>$560</strong>/night</div>
+              </div>
+              <div class="card-actions">
+                <a href="booking.html?hotel=puri-serenity" class="btn-primary">Book Now</a>
+                <a href="reviews.html?hotel=puri-serenity" class="btn-ghost btn-sm">Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-card-full" data-region="middleeast" data-price="2100" data-rating="5">
+          <div class="hotel-img-full" style="background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800')">
+            <div class="hotel-badge new">New</div>
+          </div>
+          <div class="hotel-info-full">
+            <div class="hotel-location">📍 Dubai, UAE</div>
+            <h3>Al Nakheel Palace</h3>
+            <p>Rising from the heart of Dubai, this 60-story marvel redefines opulence. Underwater suites, gold-leaf interiors, and a rooftop infinity pool at 280 meters.</p>
+            <div class="amenities">
+              <span>🏊 Pool</span><span>🧖 Spa</span><span>🍽️ Restaurant</span><span>🚁 Helipad</span><span>🏋️ Gym</span>
+            </div>
+            <div class="hotel-footer-full">
+              <div>
+                <div class="hotel-stars">★★★★★ <span>5.0 (89 reviews)</span></div>
+                <div class="hotel-price">From <strong>$2,100</strong>/night</div>
+              </div>
+              <div class="card-actions">
+                <a href="booking.html?hotel=al-nakheel" class="btn-primary">Book Now</a>
+                <a href="reviews.html?hotel=al-nakheel" class="btn-ghost btn-sm">Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-card-full" data-region="americas" data-price="780" data-rating="5">
+          <div class="hotel-img-full" style="background-image:url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800')">
+          </div>
+          <div class="hotel-info-full">
+            <div class="hotel-location">📍 New York, USA</div>
+            <h3>The Manhattan Grand</h3>
+            <p>An art deco landmark in the heart of Midtown. Breathtaking Central Park views, a legendary jazz bar, and the finest New American cuisine in the city.</p>
+            <div class="amenities">
+              <span>🏊 Pool</span><span>🧖 Spa</span><span>🍽️ Restaurant</span><span>🎵 Jazz Bar</span><span>🅿️ Valet</span>
+            </div>
+            <div class="hotel-footer-full">
+              <div>
+                <div class="hotel-stars">★★★★★ <span>4.8 (512 reviews)</span></div>
+                <div class="hotel-price">From <strong>$780</strong>/night</div>
+              </div>
+              <div class="card-actions">
+                <a href="booking.html?hotel=manhattan-grand" class="btn-primary">Book Now</a>
+                <a href="reviews.html?hotel=manhattan-grand" class="btn-ghost btn-sm">Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-card-full" data-region="asia" data-price="950" data-rating="5">
+          <div class="hotel-img-full" style="background-image:url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800')">
+          </div>
+          <div class="hotel-info-full">
+            <div class="hotel-location">📍 Tokyo, Japan</div>
+            <h3>Ryokan Kumo</h3>
+            <p>A modern interpretation of Japan's finest ryokan tradition. Private onsen baths, kaiseki dinners, and tatami suites overlooking the Imperial gardens.</p>
+            <div class="amenities">
+              <span>♨️ Onsen</span><span>🧖 Spa</span><span>🍽️ Kaiseki</span><span>🌸 Garden</span>
+            </div>
+            <div class="hotel-footer-full">
+              <div>
+                <div class="hotel-stars">★★★★★ <span>4.9 (203 reviews)</span></div>
+                <div class="hotel-price">From <strong>$950</strong>/night</div>
+              </div>
+              <div class="card-actions">
+                <a href="booking.html?hotel=ryokan-kumo" class="btn-primary">Book Now</a>
+                <a href="reviews.html?hotel=ryokan-kumo" class="btn-ghost btn-sm">Reviews</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">AURUM</div>
+          <p>Curating extraordinary hospitality experiences since 1924.</p>
+        </div>
+        <div class="footer-col"><h4>Destinations</h4><ul><li><a href="#">Europe</a></li><li><a href="#">Asia Pacific</a></li><li><a href="#">Middle East</a></li><li><a href="#">Americas</a></li></ul></div>
+        <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li></ul></div>
+        <div class="footer-col"><h4>Support</h4><ul><li><a href="#">Help Center</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 Aurum Hotels. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/hotels.js"></script>
+</body>
+</html>
